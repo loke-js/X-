@@ -15,9 +15,9 @@
 -User profile:
     -Name
     -Follower count
-     -Bio
+    -Bio
     -Last 10 tweets from the user
-
+ 
 -Pagination on tweets
 -User auth
 
