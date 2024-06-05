@@ -1,9 +1,10 @@
 const express = require("express");
 const connect = require("./config/database");
+const { HashtagRepository } = require("./repository/index");
+const TweetService = require('./services/tweet-service');
+
 const app = express();
-const Tweet = require("./models/tweet");
-const TweetRepository = require("./repository/tweet-repository");
-const Comment = require("./models/comment");
+
 app.listen(3000, async () => {
   console.log("server started");
   connect();
@@ -20,7 +21,7 @@ app.listen(3000, async () => {
   // tweet.userEmail = 'b@c.com';
   // await tweet.save();
 
-  const tweetRepo = new TweetRepository();
+  // const tweetRepo = new TweetRepository();
   // const tweet = await tweetRepo.update('6654c869166a8c65ac96ad71',{content:'new latest content here'});
 
   // const tweet  = await tweetRepo.create({content:'my tweet'});
@@ -42,5 +43,20 @@ app.listen(3000, async () => {
     // const tweet = await tweetRepo.getAll(0,4); 
 //   console.log(tweet[0].contentWithEmail);
 
-await tweetRepo.create({content:'With hooks'});
+// await tweetRepo.create({content:'With hooks'});
+
+
+
+  // let repo =new HashtagRepository();
+  // let  response = await repo.findByName(['Excited','Trend']);
+  // console.log(response);
+  // response = response.map(tags=>tags.title);
+  // console.log(response);
+
+let service = new TweetService( );
+const tweet =await  service.create({content:'THis is after #new_tweet the #pending promise #Happy #Excited  really '});
+console.log(tweet); 
+
+
+  
 });
