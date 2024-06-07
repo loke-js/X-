@@ -35,7 +35,7 @@ class LikeService {
       });
       likeable.likes.push(newLike.id);
       await likeable.save();
- 
+
       var isAdded = true;
     }
     return isAdded;
