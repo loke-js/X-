@@ -12,10 +12,10 @@
 - Repost
 
 - User profile:
- - Name
- - Follower count
- - Bio
- - Last 10 tweets from the user
+  - Name
+  - Follower count
+  - Bio
+  - Last 10 tweets from the user
 
 - Pagination on tweets
 - User auth
